@@ -125,3 +125,15 @@ def get_available_recs(user_data):
                             unique_title_set.add(movie["title"])
 
     return recomme_movie_list
+
+# -----------------------------------------
+# ------------- WAVE 5 --------------------
+# -----------------------------------------
+#first function of wave 5
+
+
+
+
+
+
+
