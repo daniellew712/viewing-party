@@ -54,6 +54,7 @@ def test_friends_unique_movies_not_duplicated():
 
     # Assert
     assert len(friends_unique_movies) == 3
+    assert get_friends_unique_watched(amandas_data) == [FANTASY_4,HORROR_1, INTRIGUE_3]
 
     assert INTRIGUE_3 in friends_unique_movies
     assert HORROR_1 in friends_unique_movies
