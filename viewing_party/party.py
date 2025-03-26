@@ -125,3 +125,21 @@ def get_available_recs(user_data):
                             unique_title_set.add(movie["title"])
 
     return recomme_movie_list
+
+# -----------------------------------------
+# ------------- WAVE 5 --------------------
+# -----------------------------------------
+def get_new_rec_by_genre(user_data):
+    if not user_data["watched"]: 
+        return []
+    
+    most_freq_genre = get_most_watched_genre(user_data)
+    recomme_movie_full_list = get_available_recs(user_data)
+
+    recomme_movie_list = []
+
+    for movie in recomme_movie_full_list:
+        if movie["genre"] == most_freq_genre:
+            recomme_movie_list.append(movie)
+            
+    return recomme_movie_list
