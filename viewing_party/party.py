@@ -143,3 +143,19 @@ def get_new_rec_by_genre(user_data):
             recomme_movie_list.append(movie)
             
     return recomme_movie_list
+
+
+def get_rec_from_favorites(user_data):
+    recommended_movies = []
+    friends_watched = set()
+    
+    # Collect all movies watched by friends
+    for friend in user_data.get("friends", []):
+        for movie in friend.get("watched", []):
+            friends_watched.add(movie["title"])
+    
+    # Find favorite movies not watched by friends
+    for movie in user_data.get("favorites", []):
+        if movie["title"] not in friends_watched:
+            recommended_movies.append(movie)
+    return recommended_movies
